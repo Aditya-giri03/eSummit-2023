@@ -1,3 +1,8 @@
+// Redirect to home
+document.querySelector('.button_base').addEventListener('click', () => {
+  window.location.href = '../index.html';
+});
+
 // owlCarousel
 $(document).ready(function () {
   $('#owl-demo').owlCarousel({
