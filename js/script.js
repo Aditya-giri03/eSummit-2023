@@ -33,6 +33,21 @@ $('.navbar a, .nav-link').on('click', function (event) {
   }
 });
 
+$('.hamburger a, .ham-links').on('click', function (event) {
+  if (this.hash !== '') {
+    event.preventDefault();
+
+    const hash = this.hash;
+
+    $('html, body').animate(
+      {
+        scrollTop: $(hash).offset().top,
+      },
+      800
+    );
+  }
+});
+
 // Scrollspy
 (function () {
   'use strict';
@@ -62,18 +77,16 @@ $('.navbar a, .nav-link').on('click', function (event) {
 
 /**************************************************HAM NAV BAR*************************************************** */
 function toggleHamButton() {
-  var x = document.getElementById("myLinks");
-  var y = document.querySelector(".topnav");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-    y.style.background ="#33333300"
-    
+  var x = document.getElementById('myLinks');
+  var y = document.querySelector('.topnav');
+  if (x.style.display === 'block') {
+    x.style.display = 'none';
+    y.style.background = '#33333300';
   } else {
-    x.style.display = "block";
-    y.style.background = "#333333bb";
+    x.style.display = 'block';
+    y.style.background = '#333333bb';
   }
 }
 
-
-document.querySelector(".hamNav").addEventListener('click', toggleHamButton);
-document.querySelector("#myLinks").addEventListener('click', toggleHamButton);
+document.querySelector('.hamNav').addEventListener('click', toggleHamButton);
+document.querySelector('#myLinks').addEventListener('click', toggleHamButton);
